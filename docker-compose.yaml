@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongodb222
+    ports:
+      - "27017:20717"
+
+  user_app:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - mongo
