@@ -28,5 +28,5 @@ jobs:
       run: |
         echo "${{ secrets.DOCKER_PEM }}" > asim.pem
         chmod 600 asim.pem
-        ssh -o StrictHostKeyChecking=no -i asim.pem ubuntu@15.206.88.153 -t "docker stop user_app && docker run --name user_app -d -p 3000:3000 asimdockeraga/ci-cd:${{github.sha}}"
+        ssh -o StrictHostKeyChecking=no -i asim.pem ubuntu@15.206.88.153 -t "docker stop user_app && docker rm user_app && docker run --name user_app -d -p 3000:3000 asimdockeraga/ci-cd:${{github.sha}}"
 
