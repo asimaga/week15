@@ -17,7 +17,7 @@ interface IUser {
 const UserSchema: Schema = new Schema<IUser>({
   name: { type: String, required: true },
   age: { type: Number, required: true },
-  email: { type: String, required: true }
+  email: { type: String, required: true },
 });
 
 // Create a User model
