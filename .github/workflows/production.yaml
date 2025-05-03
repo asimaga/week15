@@ -26,7 +26,7 @@ jobs:
     
     - name: ssh into the VM
       run: |
-        echo "${{ secrets.pem }}" > asim.pem
+        echo "${{ secrets.DOCKER_PEM }}" > asim.pem
         chmod 600 asim.pem
         ssh -o StrictHostKeyChecking=no -i asim.pem ubuntu@15.206.88.153 -t "docker stop user_app && docker run --name user_app -d -p 3000:3000 asimdockeraga/ci-cd:${{github.sha}}"
 
