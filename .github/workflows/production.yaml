@@ -24,7 +24,7 @@ jobs:
         push: true
         tags: asimdockeraga/ci-cd:${{github.sha}}
     
-    - name: sshssss into the VM
+    - name: sssshssss into the VM
       run: |
         echo "${{ secrets.DOCKER_PEM }}" > asim.pem
         chmod 600 asim.pem
